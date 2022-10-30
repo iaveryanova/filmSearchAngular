@@ -1,0 +1,36 @@
+
+
+.movie-details-container {
+  width: 900px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 40%;
+    margin-right: 2%;
+  }
+  .mat-dialog-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    h1 {
+      text-align: center;
+      font-weight: 700;
+    }
+    overflow: visible;
+    margin-bottom: 20px;
+    div {
+      font-weight: 500;
+      font-size: 16px;
+      span {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+  .mat-dialog-actions {
+    justify-content: flex-end;
+  }
+}
