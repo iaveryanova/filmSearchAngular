@@ -1,0 +1,61 @@
+<!-- <app-components></app-components> -->
+<!-- 6230c842 -->
+<!-- http://www.omdbapi.com/?i=tt3896198&apikey=6230c842 -->
+
+<h1>Cinema</h1>
+<div class="main-container">
+  <div class="search-wrapper">
+    <div class="search-container">
+      <div class="input-container">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Title</mat-label>
+          <input
+            [(ngModel)]="movieTitle"
+            matInput
+            placeholder="Title"
+            value="Enter title"
+            autocomplete="off"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="select-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Type</mat-label>
+          <mat-select [(ngModel)]="movieType">
+            <mat-option *ngFor="let type of types" [value]="type.value">
+              {{ type.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="button-container">
+        <button
+        (click)="getMovies(true)"
+        mat-raised-button
+        [disabled]="!movieTitle.length"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="movies.length">
+    <div class="movie-container">
+      <app-movie-card
+        *ngFor="let movie of movies"
+        [movie]="movie"
+      ></app-movie-card>
+    </div>
+    <mat-paginator
+      [length]="totalResults"
+      [pageSize]="10"
+      [pageIndex]="pageIndex - 1"
+      (page)="handlePageEvent($event)"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+</div>
