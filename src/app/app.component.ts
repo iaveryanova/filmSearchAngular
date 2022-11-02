@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
   getMovies(isSearchMovie?: boolean) {
     this.pageIndex = isSearchMovie ? 1 : this.pageIndex;
     if (this.movieTitle && this.movieType) {
-      console.log('type + title');
       this.omdbService
         .getMoviesByTitleAndType(this.movieTitle, this.movieType, this.pageIndex)
         .subscribe((response: ResponseData<MoviePreview>) => {
@@ -45,7 +44,6 @@ export class AppComponent implements OnInit {
         });
     }
     if (this.movieTitle && !this.movieType) {
-      console.log('title');
       this.omdbService
         .getMoviesByTitle(this.movieTitle, this.pageIndex)
         .subscribe((response: ResponseData<MoviePreview>) => {

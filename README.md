@@ -9,9 +9,9 @@ This project was generated with [Angular CLI] version 14.2.2.
 * HTML5
 * CSS3
 * TypeScript
-* Reactive forms
-* MatPaginator
-* Angular Material UI
+* HttpClientModule
+* FormsModule
+* MatPaginatorModule
 
 ## Overview
 
